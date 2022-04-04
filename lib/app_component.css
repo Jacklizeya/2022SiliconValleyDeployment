@@ -1,0 +1,15 @@
+:host {
+    /* This is equivalent of the 'body' selector of a page. */
+}
+
+.button {
+    color: red;
+}
+
+.th leftColumn {
+    width: 20%;
+}
+
+.th rightRightColumn {
+    width: 80%;
+}

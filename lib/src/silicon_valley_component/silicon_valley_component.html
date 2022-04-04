@@ -1,0 +1,39 @@
+<h1> Silicon Valley Component </h1>
+<h2> Help Canadians to Deploy in Silicon Valley </h2>
+<br>
+<br>
+<table>
+    <tr>
+        <th> Task Name </th>
+        <th>                   </th>
+        <th>                   </th>
+        <th> Notes </th>
+    </tr>
+
+    <tr *ngFor = 'let task of tasks'>
+        <th *ngIf="false"> {{task['id']}}</th>
+        <td> {{task['taskName']}}</td>
+        <td>
+            <button (click)="deleteData(task['id'])"> Remove </button>
+        </td>
+        <td>
+            <button (click)="editData(task, taskName, note)"> Edit </button>
+        </td>
+        <td>
+            <button
+                    *ngIf = "isEditing"
+                    (click)="updateData(task, taskName, note)"> Update </button>
+        </td>
+        <td> {{task['note']}}</td>
+    </tr>
+    <tr> </tr>
+    <tr>
+        <th> <input type="text" #taskName placeholder="Add Task Name"/> </th>
+        <th> <button *ngIf="!isEditing" (click)="sendData(taskName.value, note.value)"> Add </button> </th>
+        <th> <input type="text" #note placeholder="Add Notes"/> </th>
+    </tr>
+</table>
+
+
+
+
